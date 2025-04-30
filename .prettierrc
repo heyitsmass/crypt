@@ -1,0 +1,9 @@
+{
+	"tabWidth": 4,
+	"htmlWhitespaceSensitivity": "strict",
+	"objectWrap": "collapse",
+	"trailingComma": "es5",
+	"singleQuote": false,
+	"useTabs": true,
+	"printWidth": 72
+}
