@@ -1,11 +1,19 @@
-## Project: Crypt - Steganographic AI Password Generator
+## Crypt - Steganographic AI Password Generator
 
 _This ones's just for fun, not entirely practical for regular use_
 
-**1. Goal/Vision:**
+- [Crypt - Steganographic AI Password Generator](#crypt---steganographic-ai-password-generator)
+  - [Goal/Vision](#goalvision)
+  - [Core Features](#core-features)
+  - [Key Components / Architecture](#key-components--architecture)
+  - [Tech Stack](#tech-stack)
+  - [Potential Challenges](#potential-challenges)
+
+### Goal/Vision
+
 To create a novel password generation system where unique, strong passwords are generated and then hidden within the binary data of an AI-generated image using steganography. The image itself acts as the memorable "key" or storage medium, hiding the password in plain sight.
 
-**2. Core Features:**
+### Core Features
 
 -   **Password Generation:** Generate cryptographically strong random passwords.
 -   **AI Image Generation:** Interface with an external service (e.g., AWS Bedrock with Stable Diffusion, Replicate API, other) to generate a unique image based on user prompts or random seeds.
@@ -15,7 +23,7 @@ To create a novel password generation system where unique, strong passwords are 
 -   **User Interface (Next.js):** Allow users to trigger generation, view the image, and potentially extract the password later (perhaps requiring the original prompt or seed as an additional factor).
 -   **Server-Side Coordination:** The Next.js server side likely coordinates the process: generate password -> call AI service -> receive image -> perform steganography -> return image to client.
 
-**3. Key Components / Architecture:**
+### Key Components / Architecture
 
 -   **Frontend (Next.js):**
     -   UI for initiating the process (e.g., text prompt for image).
@@ -29,7 +37,7 @@ To create a novel password generation system where unique, strong passwords are 
 -   **Image Manipulation Library (Backend):** Needed for steganography (e.g., `sharp`, `jimp` for Node.js; Pillow for Python if backend is Python).
 -   **External AI Service:** AWS Bedrock, Replicate, Stability AI API, etc.
 
-**4. Tech Stack:**
+### Tech Stack
 
 -   Framework: Next.js (React, TypeScript)
 -   Backend: Node.js (if needed)
@@ -38,7 +46,7 @@ To create a novel password generation system where unique, strong passwords are 
 -   Steganography: Custom implementation or library (if available and suitable).
 -   Password Generation: Node.js `crypto` module.
 
-**5. Potential Challenges:**
+### Potential Challenges
 
 -   **Steganography Robustness:** Simple LSB is fragile and easily destroyed by image compression (e.g., JPEG) or resizing. More robust techniques are needed for practical use.
 -   **Capacity:** Limited amount of data can be hidden depending on image size and technique.
